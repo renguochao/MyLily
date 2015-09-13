@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		968C144219BC736DBB5223A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF661834F1CD2B485F547066 /* libPods.a */; };
+		D93FDA181BA113CE00A175FF /* MLTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FDA171BA113CE00A175FF /* MLTabBarButton.m */; };
 		D98C331F1BA0429500E16A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C331E1BA0429500E16A3D /* main.m */; };
-		D98C33221BA0429500E16A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33211BA0429500E16A3D /* AppDelegate.m */; };
-		D98C33251BA0429500E16A3D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33241BA0429500E16A3D /* ViewController.m */; };
-		D98C33281BA0429500E16A3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D98C33261BA0429500E16A3D /* Main.storyboard */; };
 		D98C332A1BA0429500E16A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98C33291BA0429500E16A3D /* Images.xcassets */; };
 		D98C332D1BA0429500E16A3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98C332B1BA0429500E16A3D /* LaunchScreen.xib */; };
 		D98C33391BA0429500E16A3D /* MyLilyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33381BA0429500E16A3D /* MyLilyTests.m */; };
+		D98C335A1BA046A500E16A3D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33551BA046A500E16A3D /* AppDelegate.m */; };
+		D98C335D1BA0724900E16A3D /* MLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C335C1BA0724900E16A3D /* MLTabBarViewController.m */; };
+		D98C33661BA0736000E16A3D /* MLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33651BA0736000E16A3D /* MLMessageViewController.m */; };
+		D98C33691BA073AF00E16A3D /* MLBoardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33681BA073AF00E16A3D /* MLBoardsViewController.m */; };
+		D98C336C1BA073D600E16A3D /* MLHotTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C336B1BA073D600E16A3D /* MLHotTopicsViewController.m */; };
+		D98C336F1BA073F200E16A3D /* MLTop10TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C336E1BA073F200E16A3D /* MLTop10TableViewController.m */; };
+		D98C33731BA07FF600E16A3D /* MLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33721BA07FF600E16A3D /* MLTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +33,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BED943AABAB9657B465112E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D93FDA161BA113CE00A175FF /* MLTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarButton.h; sourceTree = "<group>"; };
+		D93FDA171BA113CE00A175FF /* MLTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarButton.m; sourceTree = "<group>"; };
 		D98C33191BA0429500E16A3D /* MyLily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98C331D1BA0429500E16A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98C331E1BA0429500E16A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D98C33201BA0429500E16A3D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D98C33211BA0429500E16A3D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D98C33231BA0429500E16A3D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D98C33241BA0429500E16A3D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D98C33271BA0429500E16A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D98C33291BA0429500E16A3D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D98C332C1BA0429500E16A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D98C33321BA0429500E16A3D /* MyLilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98C33371BA0429500E16A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98C33381BA0429500E16A3D /* MyLilyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLilyTests.m; sourceTree = "<group>"; };
+		D98C33541BA046A500E16A3D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D98C33551BA046A500E16A3D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D98C335B1BA0724900E16A3D /* MLTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarViewController.h; sourceTree = "<group>"; };
+		D98C335C1BA0724900E16A3D /* MLTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarViewController.m; sourceTree = "<group>"; };
+		D98C33641BA0736000E16A3D /* MLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLMessageViewController.h; sourceTree = "<group>"; };
+		D98C33651BA0736000E16A3D /* MLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLMessageViewController.m; sourceTree = "<group>"; };
+		D98C33671BA073AF00E16A3D /* MLBoardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBoardsViewController.h; sourceTree = "<group>"; };
+		D98C33681BA073AF00E16A3D /* MLBoardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBoardsViewController.m; sourceTree = "<group>"; };
+		D98C336A1BA073D600E16A3D /* MLHotTopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHotTopicsViewController.h; sourceTree = "<group>"; };
+		D98C336B1BA073D600E16A3D /* MLHotTopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHotTopicsViewController.m; sourceTree = "<group>"; };
+		D98C336D1BA073F200E16A3D /* MLTop10TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTop10TableViewController.h; sourceTree = "<group>"; };
+		D98C336E1BA073F200E16A3D /* MLTop10TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTop10TableViewController.m; sourceTree = "<group>"; };
+		D98C33701BA07DB700E16A3D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		D98C33711BA07FF600E16A3D /* MLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBar.h; sourceTree = "<group>"; };
+		D98C33721BA07FF600E16A3D /* MLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBar.m; sourceTree = "<group>"; };
+		DF661834F1CD2B485F547066 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				968C144219BC736DBB5223A1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9257A3394B6F5BBA34F493CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF661834F1CD2B485F547066 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA534CD6A3AC2C30A24408E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BED943AABAB9657B465112E /* Pods.debug.xcconfig */,
+				88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D98C33101BA0429400E16A3D = {
 			isa = PBXGroup;
 			children = (
 				D98C331B1BA0429500E16A3D /* MyLily */,
 				D98C33351BA0429500E16A3D /* MyLilyTests */,
 				D98C331A1BA0429500E16A3D /* Products */,
+				BA534CD6A3AC2C30A24408E1 /* Pods */,
+				9257A3394B6F5BBA34F493CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +122,7 @@
 		D98C331B1BA0429500E16A3D /* MyLily */ = {
 			isa = PBXGroup;
 			children = (
-				D98C33201BA0429500E16A3D /* AppDelegate.h */,
-				D98C33211BA0429500E16A3D /* AppDelegate.m */,
-				D98C33231BA0429500E16A3D /* ViewController.h */,
-				D98C33241BA0429500E16A3D /* ViewController.m */,
-				D98C33261BA0429500E16A3D /* Main.storyboard */,
+				D98C33421BA046A500E16A3D /* Classes */,
 				D98C33291BA0429500E16A3D /* Images.xcassets */,
 				D98C332B1BA0429500E16A3D /* LaunchScreen.xib */,
 				D98C331C1BA0429500E16A3D /* Supporting Files */,
@@ -119,6 +156,198 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D98C33421BA046A500E16A3D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33431BA046A500E16A3D /* Boards */,
+				D98C33471BA046A500E16A3D /* HotTopics */,
+				D98C334B1BA046A500E16A3D /* Mail */,
+				D98C334F1BA046A500E16A3D /* Main */,
+				D98C33531BA046A500E16A3D /* Other */,
+				D98C33561BA046A500E16A3D /* Top10 */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D98C33431BA046A500E16A3D /* Boards */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33441BA046A500E16A3D /* Controller */,
+				D98C33451BA046A500E16A3D /* Model */,
+				D98C33461BA046A500E16A3D /* View */,
+			);
+			path = Boards;
+			sourceTree = "<group>";
+		};
+		D98C33441BA046A500E16A3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33671BA073AF00E16A3D /* MLBoardsViewController.h */,
+				D98C33681BA073AF00E16A3D /* MLBoardsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D98C33451BA046A500E16A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D98C33461BA046A500E16A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98C33471BA046A500E16A3D /* HotTopics */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33481BA046A500E16A3D /* Controller */,
+				D98C33491BA046A500E16A3D /* Model */,
+				D98C334A1BA046A500E16A3D /* View */,
+			);
+			path = HotTopics;
+			sourceTree = "<group>";
+		};
+		D98C33481BA046A500E16A3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98C336A1BA073D600E16A3D /* MLHotTopicsViewController.h */,
+				D98C336B1BA073D600E16A3D /* MLHotTopicsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D98C33491BA046A500E16A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D98C334A1BA046A500E16A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98C334B1BA046A500E16A3D /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				D98C334C1BA046A500E16A3D /* Controller */,
+				D98C334D1BA046A500E16A3D /* Model */,
+				D98C334E1BA046A500E16A3D /* View */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		D98C334C1BA046A500E16A3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33641BA0736000E16A3D /* MLMessageViewController.h */,
+				D98C33651BA0736000E16A3D /* MLMessageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D98C334D1BA046A500E16A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D98C334E1BA046A500E16A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98C334F1BA046A500E16A3D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33501BA046A500E16A3D /* Controller */,
+				D98C33511BA046A500E16A3D /* Model */,
+				D98C33521BA046A500E16A3D /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D98C33501BA046A500E16A3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98C335B1BA0724900E16A3D /* MLTabBarViewController.h */,
+				D98C335C1BA0724900E16A3D /* MLTabBarViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D98C33511BA046A500E16A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D98C33521BA046A500E16A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33711BA07FF600E16A3D /* MLTabBar.h */,
+				D98C33721BA07FF600E16A3D /* MLTabBar.m */,
+				D93FDA161BA113CE00A175FF /* MLTabBarButton.h */,
+				D93FDA171BA113CE00A175FF /* MLTabBarButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D98C33531BA046A500E16A3D /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33541BA046A500E16A3D /* AppDelegate.h */,
+				D98C33551BA046A500E16A3D /* AppDelegate.m */,
+				D98C33701BA07DB700E16A3D /* Common.h */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D98C33561BA046A500E16A3D /* Top10 */ = {
+			isa = PBXGroup;
+			children = (
+				D98C33571BA046A500E16A3D /* Controller */,
+				D98C33581BA046A500E16A3D /* Model */,
+				D98C33591BA046A500E16A3D /* View */,
+			);
+			path = Top10;
+			sourceTree = "<group>";
+		};
+		D98C33571BA046A500E16A3D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D98C336D1BA073F200E16A3D /* MLTop10TableViewController.h */,
+				D98C336E1BA073F200E16A3D /* MLTop10TableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D98C33581BA046A500E16A3D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D98C33591BA046A500E16A3D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +355,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D98C333C1BA0429500E16A3D /* Build configuration list for PBXNativeTarget "MyLily" */;
 			buildPhases = (
+				7F27692EC20F453E6E6E05B1 /* Check Pods Manifest.lock */,
 				D98C33151BA0429500E16A3D /* Sources */,
 				D98C33161BA0429500E16A3D /* Frameworks */,
 				D98C33171BA0429500E16A3D /* Resources */,
+				7A109CD41EEE96F50E80FE8A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,6 +394,7 @@
 		D98C33111BA0429400E16A3D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ML;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = rgc;
 				TargetAttributes = {
@@ -199,7 +431,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98C33281BA0429500E16A3D /* Main.storyboard in Resources */,
 				D98C332D1BA0429500E16A3D /* LaunchScreen.xib in Resources */,
 				D98C332A1BA0429500E16A3D /* Images.xcassets in Resources */,
 			);
@@ -214,14 +445,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A109CD41EEE96F50E80FE8A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F27692EC20F453E6E6E05B1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D98C33151BA0429500E16A3D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98C33251BA0429500E16A3D /* ViewController.m in Sources */,
-				D98C33221BA0429500E16A3D /* AppDelegate.m in Sources */,
+				D93FDA181BA113CE00A175FF /* MLTabBarButton.m in Sources */,
+				D98C33661BA0736000E16A3D /* MLMessageViewController.m in Sources */,
+				D98C336C1BA073D600E16A3D /* MLHotTopicsViewController.m in Sources */,
+				D98C33731BA07FF600E16A3D /* MLTabBar.m in Sources */,
 				D98C331F1BA0429500E16A3D /* main.m in Sources */,
+				D98C335A1BA046A500E16A3D /* AppDelegate.m in Sources */,
+				D98C335D1BA0724900E16A3D /* MLTabBarViewController.m in Sources */,
+				D98C33691BA073AF00E16A3D /* MLBoardsViewController.m in Sources */,
+				D98C336F1BA073F200E16A3D /* MLTop10TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +514,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D98C33261BA0429500E16A3D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D98C33271BA0429500E16A3D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D98C332B1BA0429500E16A3D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +607,7 @@
 		};
 		D98C333D1BA0429500E16A3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BED943AABAB9657B465112E /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyLily/Info.plist;
@@ -355,6 +618,7 @@
 		};
 		D98C333E1BA0429500E16A3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyLily/Info.plist;
@@ -416,6 +680,7 @@
 				D98C333E1BA0429500E16A3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D98C333F1BA0429500E16A3D /* Build configuration list for PBXNativeTarget "MyLilyTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +689,7 @@
 				D98C33411BA0429500E16A3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
