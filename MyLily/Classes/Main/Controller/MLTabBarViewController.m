@@ -10,7 +10,7 @@
 #import "MLBoardsViewController.h"
 #import "MLHotTopicsViewController.h"
 #import "MLMessageViewController.h"
-#import "MLTop10TableViewController.h"
+#import "MLTop10ViewController.h"
 
 #import "MLTabBar.h"
 
@@ -75,7 +75,7 @@
  */
 - (void)setupAllChildViewControllers {
     // 1. 十大
-    MLTop10TableViewController *top10 = [[MLTop10TableViewController alloc] init];
+    MLTop10ViewController *top10 = [[MLTop10ViewController alloc] init];
     [self setupAllChildViewControllers:top10 title:@"十大" imageName:@"icon_tab_home_nor" selectedImageName:@"icon_tab_home_pre"];
     
     // 2. 热门话题

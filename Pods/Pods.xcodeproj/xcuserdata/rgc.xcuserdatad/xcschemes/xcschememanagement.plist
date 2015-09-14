@@ -19,20 +19,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>hpple.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>34A7FF6A76EA97F164286079A57FE6F1</key>
+		<key>0076BDB496A2DCDD5F787B958B9E0725</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D1CB24038720D57425A19FF91BCC7708</key>
+		<key>038C0A2B361F6891E439AA98F267EEF6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8587F48421FADC155134521572A0150</key>
+		<key>462023D82E5FE0F9414A448820042FF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BA250BDE05647A8E5AE0B5FB0421E3CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
