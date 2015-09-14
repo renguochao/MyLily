@@ -4,11 +4,19 @@
 //
 //  Created by rgc on 15/9/9.
 //  Copyright (c) 2015年 rgc. All rights reserved.
-//
+//  十大
 
 #import "MLTop10TableViewController.h"
 
-@interface MLTop10TableViewController ()
+#import "MLPost.h"
+
+#import "Common.h"
+#import "TFHpple.h"
+
+
+@interface MLTop10TableViewController () {
+    NSMutableArray *_top10Posts;
+}
 
 @end
 
@@ -17,84 +25,90 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 1.设置界面
+    [self buildUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 1.加载数据
+    [self loadData];
+}
+
+- (void)buildUI {
+    
+}
+
+/**
+ *  加载数据
+ */
+- (void)loadData {
+    
+    NSURL *top10Url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASEURL, TOP10URL]];
+    NSData *top10HtmlData = [NSData dataWithContentsOfURL:top10Url];
+//    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+//    NSString *top10HtmlString = [[NSString alloc] initWithData:top10HtmlData encoding:encoding];
+//    NSLog(@"%@", top10HtmlString);
+    
+    [self parseData:top10HtmlData];
+}
+
+- (void)parseData:(NSData *)data {
+    
+    // 1. 从HTML中搜索tr节点
+    TFHpple *doc = [TFHpple hppleWithHTMLData:data];
+    
+    NSString *top10ArticlesXpathQueryString = @"//table/tr";
+    NSArray *top10Nodes = [doc searchWithXPathQuery:top10ArticlesXpathQueryString];
+    
+    _top10Posts = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    // 2. 遍历十大节点
+    for (int i = 1; i < top10Nodes.count; i ++) { // 第一行是title跳过
+        TFHppleElement *element = [top10Nodes objectAtIndex:i];
+        MLPost *post = [[MLPost alloc] initWithTFHppleElement:element];
+ 
+        [_top10Posts addObject:post];
+    }
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [_top10Posts count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *reuseIdentifier = @"Top10Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+    }
+    
+    MLPost *post = [_top10Posts objectAtIndex:indexPath.row];
+    cell.textLabel.text = post.title;
+    cell.detailTextLabel.text = post.author.name;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSLog(@"indexPath.row:%ld", (long)indexPath.row);
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
