@@ -20,5 +20,4 @@
 @property (nonatomic, strong) MLAuthor *author;
 @property (nonatomic, assign) int replyCount;
 
-- (id)initWithTFHppleElement:(TFHppleElement *)element;
 @end
