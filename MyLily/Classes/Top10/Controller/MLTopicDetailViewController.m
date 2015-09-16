@@ -45,14 +45,7 @@
     // 1. 获取Data
     NSData *postDetailHtmlData = [MLNetTool loadHtmlDataFromUrl:self.topicUrl];
     
-    // 2. 转码成utf8Data:先转成gb2312, 替换meta, 然后转成utf8
-    NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSString *postHtmlStr = [[NSString alloc] initWithData:postDetailHtmlData encoding:gbkEncoding];
-
-    NSString *uft8HtmlStr = [postHtmlStr stringByReplacingOccurrencesOfString:@"<meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=gb2312\">" withString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
-    NSData *utf8HtmlData = [uft8HtmlStr dataUsingEncoding:NSUTF8StringEncoding];
-    
-    [self parseData:utf8HtmlData];
+    [self parseData:postDetailHtmlData];
 }
 
 - (void)parseData:(NSData *)data {

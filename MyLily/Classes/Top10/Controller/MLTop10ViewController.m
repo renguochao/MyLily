@@ -47,7 +47,7 @@
  */
 - (void)loadData {
     
-    NSData *top10HtmlData = [MLNetTool loadHtmlDataFromUrl:TOP10URL];
+    NSData *top10HtmlData = [MLNetTool loadHtmlDataFromUrl:kTOP10URL];
 //    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
 //    NSString *top10HtmlString = [[NSString alloc] initWithData:top10HtmlData encoding:encoding];
 //    NSLog(@"%@", top10HtmlString);

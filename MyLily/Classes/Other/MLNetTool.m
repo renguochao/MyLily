@@ -12,9 +12,18 @@
 @implementation MLNetTool
 
 + (NSData *)loadHtmlDataFromUrl:(NSString *)url {
-    NSURL *absoluteUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASEURL, TOP10URL]];
+    // 1. 加载Data
+    NSURL *absoluteUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", kBASEURL, url]];
     NSData *htmlData = [NSData dataWithContentsOfURL:absoluteUrl];
-    return htmlData;
+    
+    // 2. 转码成utf8Data:先转成gb2312, 替换meta, 然后转成utf8
+    NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSString *postHtmlStr = [[NSString alloc] initWithData:htmlData encoding:gbkEncoding];
+    
+    NSString *uft8HtmlStr = [postHtmlStr stringByReplacingOccurrencesOfString:@"<meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=gb2312\">" withString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
+    NSData *utf8HtmlData = [uft8HtmlStr dataUsingEncoding:NSUTF8StringEncoding];
+
+    return utf8HtmlData;
 }
 
 @end
