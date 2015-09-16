@@ -11,6 +11,7 @@
 
 #import "MLPost.h"
 
+#import "MLNetTool.h"
 #import "Common.h"
 #import "TFHpple.h"
 
@@ -46,8 +47,7 @@
  */
 - (void)loadData {
     
-    NSURL *top10Url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASEURL, TOP10URL]];
-    NSData *top10HtmlData = [NSData dataWithContentsOfURL:top10Url];
+    NSData *top10HtmlData = [MLNetTool loadHtmlDataFromUrl:TOP10URL];
 //    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
 //    NSString *top10HtmlString = [[NSString alloc] initWithData:top10HtmlData encoding:encoding];
 //    NSLog(@"%@", top10HtmlString);
