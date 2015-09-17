@@ -15,5 +15,6 @@
 
 + (MLPost *)parseTop10Element:(TFHppleElement *)element;
 + (NSArray *)parseTopAllSection:(TFHppleElement *)element;
++ (NSArray *)parseTopAllPostsRow:(TFHppleElement *)element;
 
 @end
