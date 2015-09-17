@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		968C144219BC736DBB5223A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF661834F1CD2B485F547066 /* libPods.a */; };
+		D93CD80C1BA8F633002786FE /* MLNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D93CD80B1BA8F633002786FE /* MLNetTool.m */; };
+		D93CD80F1BA90058002786FE /* MLHppleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D93CD80E1BA90058002786FE /* MLHppleParser.m */; };
 		D93FDA181BA113CE00A175FF /* MLTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FDA171BA113CE00A175FF /* MLTabBarButton.m */; };
 		D98C331F1BA0429500E16A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C331E1BA0429500E16A3D /* main.m */; };
 		D98C332A1BA0429500E16A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98C33291BA0429500E16A3D /* Images.xcassets */; };
@@ -40,6 +42,10 @@
 /* Begin PBXFileReference section */
 		4BED943AABAB9657B465112E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D93CD80A1BA8F633002786FE /* MLNetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNetTool.h; sourceTree = "<group>"; };
+		D93CD80B1BA8F633002786FE /* MLNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNetTool.m; sourceTree = "<group>"; };
+		D93CD80D1BA90058002786FE /* MLHppleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHppleParser.h; sourceTree = "<group>"; };
+		D93CD80E1BA90058002786FE /* MLHppleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHppleParser.m; sourceTree = "<group>"; };
 		D93FDA161BA113CE00A175FF /* MLTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarButton.h; sourceTree = "<group>"; };
 		D93FDA171BA113CE00A175FF /* MLTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarButton.m; sourceTree = "<group>"; };
 		D98C33191BA0429500E16A3D /* MyLily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLily.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +332,8 @@
 				D98C33541BA046A500E16A3D /* AppDelegate.h */,
 				D98C33551BA046A500E16A3D /* AppDelegate.m */,
 				D98C33701BA07DB700E16A3D /* Common.h */,
+				D93CD80A1BA8F633002786FE /* MLNetTool.h */,
+				D93CD80B1BA8F633002786FE /* MLNetTool.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -360,6 +368,8 @@
 				D9F1E8D81BA6A9BA002D89DF /* MLAuthor.m */,
 				D9F1E8DD1BA6BE50002D89DF /* MLPostDetail.h */,
 				D9F1E8DE1BA6BE50002D89DF /* MLPostDetail.m */,
+				D93CD80D1BA90058002786FE /* MLHppleParser.h */,
+				D93CD80E1BA90058002786FE /* MLHppleParser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -519,6 +529,8 @@
 				D98C33661BA0736000E16A3D /* MLMessageViewController.m in Sources */,
 				D98C336C1BA073D600E16A3D /* MLHotTopicsViewController.m in Sources */,
 				D9F1E8DF1BA6BE50002D89DF /* MLPostDetail.m in Sources */,
+				D93CD80C1BA8F633002786FE /* MLNetTool.m in Sources */,
+				D93CD80F1BA90058002786FE /* MLHppleParser.m in Sources */,
 				D98C33731BA07FF600E16A3D /* MLTabBar.m in Sources */,
 				D9F1E8D61BA6A914002D89DF /* MLPost.m in Sources */,
 				D98C331F1BA0429500E16A3D /* main.m in Sources */,

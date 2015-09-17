@@ -14,7 +14,7 @@
 #import "MLNetTool.h"
 #import "Common.h"
 #import "TFHpple.h"
-
+#import "MLHppleParser.h"
 
 @interface MLTop10ViewController () {
     NSMutableArray *_top10Posts;
@@ -68,9 +68,9 @@
     // 2. 遍历十大节点
     for (int i = 1; i < top10Nodes.count; i ++) { // 第一行是title跳过
         TFHppleElement *element = [top10Nodes objectAtIndex:i];
-        MLPost *post = [[MLPost alloc] initWithTFHppleElement:element];
- 
-        [_top10Posts addObject:post];
+        MLPost *top10Post = [MLHppleParser parseTop10Element:element];
+        
+        [_top10Posts addObject:top10Post];
     }
     
 }

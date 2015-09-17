@@ -13,6 +13,8 @@
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 // 2. 服务器URL
-#define BASEURL @"http://bbs.nju.edu.cn/"
-#define TOP10URL @"bbstop10"
+#define kBASEURL @"http://bbs.nju.edu.cn/"
+#define kTOP10URL @"bbstop10"
+#define kTOPALL @"bbstopall"
+
 #endif
