@@ -20,4 +20,5 @@
 @property (nonatomic, strong) MLAuthor *author;
 @property (nonatomic, assign) int replyCount;
 
+- (NSString *)description;
 @end

@@ -14,5 +14,8 @@
 
 @implementation MLPost
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"title:%@, url:%@, board:%@, boardUrl:%@, author:%@, replyCount:%d, ranking:%d", self.title, self.url, self.board, self.boardUrl, self.author, self.replyCount];
+}
 
 @end
