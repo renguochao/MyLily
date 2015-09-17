@@ -7,94 +7,101 @@
 //
 
 #import "MLHotTopicsViewController.h"
+#import "MLTopicDetailViewController.h"
 
-@interface MLHotTopicsViewController ()
+#import "MLPost.h"
+
+#import "TFHpple.h"
+#import "Common.h"
+#import "MLNetTool.h"
+#import "MLHppleParser.h"
+
+#define kSectionNums 1
+
+@interface MLHotTopicsViewController () {
+    NSMutableArray *_topAllSections;
+}
 
 @end
 
+// 12个section
 @implementation MLHotTopicsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // 1. 设置界面
+    [self buildUI];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // 2. 加载数据
+    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)buildUI {
+    
+}
+
+- (void)loadData {
+    NSData *topAllData = [MLNetTool loadHtmlDataFromUrl:kTOPALL];
+    
+    [self parseData:topAllData];
+}
+
+- (void)parseData:(NSData *)data {
+    
+    // 1. 从HTML中搜索12个section节点
+    TFHpple *doc = [TFHpple hppleWithHTMLData:data];
+    
+    NSString *allSectionXpathQueryString = @"//table";
+    NSArray *topAllNodes = [doc searchWithXPathQuery:allSectionXpathQueryString];
+    
+    _topAllSections = [[NSMutableArray alloc] initWithCapacity:0];
+    
+    // 2. 遍历12个section
+    _topAllSections = [[NSMutableArray alloc] initWithCapacity:0];
+    [_topAllSections addObjectsFromArray:[MLHppleParser parseTopAllSection:[topAllNodes objectAtIndex:0]]];
+
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return [_topAllSections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [[_topAllSections objectAtIndex:section] count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *reuseIdentifier = @"Top10Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
-    // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+    }
+    
+    MLPost *post = [[_topAllSections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.textLabel.text = post.title;
+    cell.detailTextLabel.text = post.author.name;
     
     return cell;
-}
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 80;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    MLPost *post = [[_topAllSections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    MLTopicDetailViewController *topicDetailVC = [[MLTopicDetailViewController alloc] init];
+    topicDetailVC.topicUrl = post.url;
+    
+    [self.navigationController pushViewController:topicDetailVC animated:YES];
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
