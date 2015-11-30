@@ -11,14 +11,18 @@
 
 #import "MLPost.h"
 
+#import "MLTop10Cell.h"
+
 #import "MLNetTool.h"
 #import "Common.h"
 #import "TFHpple.h"
 #import "MLHppleParser.h"
+#import "MLPostFrame.h"
+#import "MJRefresh.h"
 
-@interface MLTop10ViewController () {
-    NSMutableArray *_top10Posts;
-}
+@interface MLTop10ViewController ()
+
+@property (nonatomic, strong) NSMutableArray *postFrames;
 
 @end
 
@@ -35,26 +39,44 @@
     [super viewWillAppear:animated];
     
     // 1.加载数据
-    [self loadData];
+//    [self loadData];
 }
 
 - (void)buildUI {
+    // 1.添加刷新控件
+    [self addRefreshViews];
+    
+}
+
+- (void)addRefreshViews {
+    // 1.下拉刷新控件
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    self.tableView.header.automaticallyChangeAlpha = YES;
+    // 开始刷新
+    [self.tableView.header beginRefreshing];
     
 }
 
 /**
- *  加载数据
+ *  加载最新数据
  */
-- (void)loadData {
-    
+- (void)loadNewData {
+    // 1.加载数据
     NSData *top10HtmlData = [MLNetTool loadHtmlDataFromUrl:kTOP10URL];
-//    NSStringEncoding encoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-//    NSString *top10HtmlString = [[NSString alloc] initWithData:top10HtmlData encoding:encoding];
-//    NSLog(@"%@", top10HtmlString);
     
+    // 2.解析数据
     [self parseData:top10HtmlData];
+    
+    // 3.停止刷新控件
+    [self.tableView.header endRefreshing];
 }
 
+/**
+ *  解析html数据
+ *
+ *  @param data html返回数据
+ */
 - (void)parseData:(NSData *)data {
     
     // 1. 从HTML中搜索tr节点
@@ -63,16 +85,19 @@
     NSString *top10ArticlesXpathQueryString = @"//table/tr";
     NSArray *top10Nodes = [doc searchWithXPathQuery:top10ArticlesXpathQueryString];
     
-    _top10Posts = [[NSMutableArray alloc] initWithCapacity:0];
+    _postFrames = [[NSMutableArray alloc] init];
     
     // 2. 遍历十大节点
     for (int i = 1; i < top10Nodes.count; i ++) { // 第一行是title跳过
         TFHppleElement *element = [top10Nodes objectAtIndex:i];
-        MLPost *top10Post = [MLHppleParser parseTop10Element:element];
-        
-        [_top10Posts addObject:top10Post];
+        MLPost *post = [MLHppleParser parseTop10Element:element];
+        MLPostFrame *postFrame = [[MLPostFrame alloc] init];
+        [postFrame setPost:post];
+        [_postFrames addObject:postFrame];
     }
     
+    // 3.刷新TableView数据
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -82,34 +107,36 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_top10Posts count];
+    return [_postFrames count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *reuseIdentifier = @"Top10Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    MLTop10Cell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
+        cell = [[MLTop10Cell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
     }
     
-    MLPost *post = [_top10Posts objectAtIndex:indexPath.row];
-    cell.textLabel.text = post.title;
-    cell.detailTextLabel.text = post.author.name;
+    MLPostFrame *postFrame = self.postFrames[indexPath.row];
+    [cell setPostFrame:postFrame];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
+    MLPostFrame *postFrame = self.postFrames[indexPath.row];
+    return postFrame.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    MLPost *post = [_top10Posts objectAtIndex:indexPath.row];
+    MLPostFrame *postFrame = self.postFrames[indexPath.row];
+    MLPost *post = postFrame.post;
     MLTopicDetailViewController *topicDetailVC = [[MLTopicDetailViewController alloc] init];
+    topicDetailVC.title = post.title;
     topicDetailVC.topicUrl = post.url;
     
     [self.navigationController pushViewController:topicDetailVC animated:YES];
