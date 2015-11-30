@@ -10,7 +10,8 @@
 
 @interface MLAuthor : NSObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *authorId;
+@property (nonatomic, strong) NSString *authorScreenName;
 @property (nonatomic, strong) NSString *url;
 
 @end

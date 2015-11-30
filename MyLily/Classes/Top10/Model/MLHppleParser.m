@@ -51,7 +51,7 @@
     NSString *authorName = [[authorAElement text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     NSString *authorUrl = [[authorAElement attributes] objectForKey:@"href"];
     post.author = [[MLAuthor alloc] init];
-    post.author.name = authorName;
+    post.author.authorId = authorName;
     post.author.url = authorUrl;
     
     // 跟帖人数

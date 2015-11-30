@@ -20,5 +20,12 @@
 @property (nonatomic, strong) MLAuthor *author;
 @property (nonatomic, assign) int replyCount;
 
+@property (nonatomic, assign) int level; // 几楼
+@property (nonatomic, strong) NSString *postTime; // 时间
+@property (nonatomic, strong) NSString *content; // 帖子内容
+@property (nonatomic, strong) NSString *ip; //发帖的ip
+
+- (id)initWithTFHppleElement:(TFHppleElement *)element;
+
 - (NSString *)description;
 @end
