@@ -23,6 +23,7 @@
 @property (nonatomic, assign) int level; // 几楼
 @property (nonatomic, strong) NSString *postTime; // 时间
 @property (nonatomic, strong) NSString *content; // 帖子内容
+@property (nonatomic, strong) NSMutableArray *contentSegments; // 解析后的帖子片段
 @property (nonatomic, strong) NSString *ip; //发帖的ip
 
 - (id)initWithTFHppleElement:(TFHppleElement *)element;

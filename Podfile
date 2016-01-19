@@ -1,4 +1,8 @@
 platform :ios, '8.0'
 pod 'AFNetworking', '~> 2.6.0'
 pod 'Masonry', '~> 0.6.2'
+pod 'MMPlaceHolder', '~> 1.8'
 pod 'hpple', '~> 0.2.0'
+pod 'MJRefresh', '~> 2.4.9'
+pod 'SDWebImage', '~> 3.7.3'
+pod 'YYKit', '~> 0.9.4'

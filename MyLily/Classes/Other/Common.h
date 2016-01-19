@@ -17,4 +17,13 @@
 #define kTOP10URL @"bbstop10"
 #define kTOPALL @"bbstopall"
 
+#define ScreenRect   [[UIScreen mainScreen] bounds]
+#define ScreenWidth  [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+// 3. 帖子
+/** 帖子内容字体 */
+#define kPostContentFont [UIFont systemFontOfSize:14]
+#define kPostAuthorFont [UIFont boldSystemFontOfSize:16]
+
 #endif

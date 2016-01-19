@@ -22,15 +22,31 @@ PODS:
     - AFNetworking/NSURLSession
   - hpple (0.2.0)
   - Masonry (0.6.2)
+  - MJRefresh (2.4.9)
+  - MMPlaceHolder (1.8)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - YYKit (0.9.4):
+    - YYKit/no-arc (= 0.9.4)
+  - YYKit/no-arc (0.9.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.0)
   - hpple (~> 0.2.0)
   - Masonry (~> 0.6.2)
+  - MJRefresh (~> 2.4.9)
+  - MMPlaceHolder (~> 1.8)
+  - SDWebImage (~> 3.7.3)
+  - YYKit (~> 0.9.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MJRefresh: be84acb912d0a66364f76a75426698a39528e2ed
+  MMPlaceHolder: 6dbbd7d0dbaaa556eefbc75b8039fcd9f9cd576a
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  YYKit: 6d41531048acfe3921ec08337bb71e1a7d9343d9
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
