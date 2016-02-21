@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		968C144219BC736DBB5223A1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF661834F1CD2B485F547066 /* libPods.a */; };
+		D905A6F51C4F32E3004D4ABC /* content_template.html in Resources */ = {isa = PBXBuildFile; fileRef = D905A6F41C4F32E3004D4ABC /* content_template.html */; };
+		D905A6F81C4F5B64004D4ABC /* MLTopicDetailWebCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D905A6F71C4F5B64004D4ABC /* MLTopicDetailWebCell.m */; };
+		D91E05D21C783C3200403C96 /* SXDetails.css in Resources */ = {isa = PBXBuildFile; fileRef = D91E05D11C783C3200403C96 /* SXDetails.css */; };
+		D91E05D41C7856C500403C96 /* back2.png in Resources */ = {isa = PBXBuildFile; fileRef = D91E05D31C7856C500403C96 /* back2.png */; };
 		D93CD80C1BA8F633002786FE /* MLNetTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D93CD80B1BA8F633002786FE /* MLNetTool.m */; };
 		D93CD80F1BA90058002786FE /* MLHppleParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D93CD80E1BA90058002786FE /* MLHppleParser.m */; };
 		D93FDA181BA113CE00A175FF /* MLTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D93FDA171BA113CE00A175FF /* MLTabBarButton.m */; };
+		D95F64C91C79BF220027902E /* NSData+MLDataCorrection.m in Sources */ = {isa = PBXBuildFile; fileRef = D95F64C81C79BF220027902E /* NSData+MLDataCorrection.m */; };
+		D969677F1C4F82D600860350 /* MLTopicWebDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D969677E1C4F82D600860350 /* MLTopicWebDetailViewController.m */; };
+		D96967811C4F8AD600860350 /* jquery.min.js in Resources */ = {isa = PBXBuildFile; fileRef = D96967801C4F8AD600860350 /* jquery.min.js */; };
 		D98C331F1BA0429500E16A3D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C331E1BA0429500E16A3D /* main.m */; };
 		D98C332A1BA0429500E16A3D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D98C33291BA0429500E16A3D /* Images.xcassets */; };
 		D98C332D1BA0429500E16A3D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D98C332B1BA0429500E16A3D /* LaunchScreen.xib */; };
@@ -22,6 +29,7 @@
 		D98C336C1BA073D600E16A3D /* MLHotTopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C336B1BA073D600E16A3D /* MLHotTopicsViewController.m */; };
 		D98C336F1BA073F200E16A3D /* MLTop10ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C336E1BA073F200E16A3D /* MLTop10ViewController.m */; };
 		D98C33731BA07FF600E16A3D /* MLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C33721BA07FF600E16A3D /* MLTabBar.m */; };
+		D98C6F841C7760010056538A /* MLTopicPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D98C6F831C7760010056538A /* MLTopicPageViewController.m */; };
 		D98EF8451C0C9D5C00DF4B01 /* MLPostContentSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D98EF8441C0C9D5C00DF4B01 /* MLPostContentSegment.m */; };
 		D990ADA81BAA924A00FA3A24 /* MLTop10Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D990ADA71BAA924A00FA3A24 /* MLTop10Cell.m */; };
 		D9A5F5B91BFB3AAE00B3235B /* MLPostFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = D9A5F5B81BFB3AAE00B3235B /* MLPostFrame.m */; };
@@ -48,12 +56,22 @@
 /* Begin PBXFileReference section */
 		4BED943AABAB9657B465112E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D905A6F41C4F32E3004D4ABC /* content_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = content_template.html; sourceTree = "<group>"; };
+		D905A6F61C4F5B64004D4ABC /* MLTopicDetailWebCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTopicDetailWebCell.h; sourceTree = "<group>"; };
+		D905A6F71C4F5B64004D4ABC /* MLTopicDetailWebCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTopicDetailWebCell.m; sourceTree = "<group>"; };
+		D91E05D11C783C3200403C96 /* SXDetails.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = SXDetails.css; sourceTree = "<group>"; };
+		D91E05D31C7856C500403C96 /* back2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back2.png; sourceTree = "<group>"; };
 		D93CD80A1BA8F633002786FE /* MLNetTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNetTool.h; sourceTree = "<group>"; };
 		D93CD80B1BA8F633002786FE /* MLNetTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNetTool.m; sourceTree = "<group>"; };
 		D93CD80D1BA90058002786FE /* MLHppleParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLHppleParser.h; sourceTree = "<group>"; };
 		D93CD80E1BA90058002786FE /* MLHppleParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLHppleParser.m; sourceTree = "<group>"; };
 		D93FDA161BA113CE00A175FF /* MLTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBarButton.h; sourceTree = "<group>"; };
 		D93FDA171BA113CE00A175FF /* MLTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBarButton.m; sourceTree = "<group>"; };
+		D95F64C71C79BF220027902E /* NSData+MLDataCorrection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MLDataCorrection.h"; sourceTree = "<group>"; };
+		D95F64C81C79BF220027902E /* NSData+MLDataCorrection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MLDataCorrection.m"; sourceTree = "<group>"; };
+		D969677D1C4F82D600860350 /* MLTopicWebDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTopicWebDetailViewController.h; sourceTree = "<group>"; };
+		D969677E1C4F82D600860350 /* MLTopicWebDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTopicWebDetailViewController.m; sourceTree = "<group>"; };
+		D96967801C4F8AD600860350 /* jquery.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.min.js; sourceTree = "<group>"; };
 		D98C33191BA0429500E16A3D /* MyLily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98C331D1BA0429500E16A3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D98C331E1BA0429500E16A3D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +95,8 @@
 		D98C33701BA07DB700E16A3D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		D98C33711BA07FF600E16A3D /* MLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTabBar.h; sourceTree = "<group>"; };
 		D98C33721BA07FF600E16A3D /* MLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTabBar.m; sourceTree = "<group>"; };
+		D98C6F821C7760010056538A /* MLTopicPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTopicPageViewController.h; sourceTree = "<group>"; };
+		D98C6F831C7760010056538A /* MLTopicPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTopicPageViewController.m; sourceTree = "<group>"; };
 		D98EF8431C0C9D5C00DF4B01 /* MLPostContentSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPostContentSegment.h; sourceTree = "<group>"; };
 		D98EF8441C0C9D5C00DF4B01 /* MLPostContentSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPostContentSegment.m; sourceTree = "<group>"; };
 		D990ADA61BAA924A00FA3A24 /* MLTop10Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTop10Cell.h; sourceTree = "<group>"; };
@@ -135,6 +155,26 @@
 				88D07BD0C0BCCAC027A609AC /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		D905A6F01C4F325C004D4ABC /* html */ = {
+			isa = PBXGroup;
+			children = (
+				D91E05D31C7856C500403C96 /* back2.png */,
+				D91E05D11C783C3200403C96 /* SXDetails.css */,
+				D96967801C4F8AD600860350 /* jquery.min.js */,
+				D905A6F41C4F32E3004D4ABC /* content_template.html */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		D95F64C61C79BEEE0027902E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D95F64C71C79BF220027902E /* NSData+MLDataCorrection.h */,
+				D95F64C81C79BF220027902E /* NSData+MLDataCorrection.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		D98C33101BA0429400E16A3D = {
@@ -350,6 +390,7 @@
 		D98C33531BA046A500E16A3D /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				D95F64C61C79BEEE0027902E /* Category */,
 				D9F1E8E01BA70686002D89DF /* Resources */,
 				D98C33541BA046A500E16A3D /* AppDelegate.h */,
 				D98C33551BA046A500E16A3D /* AppDelegate.m */,
@@ -377,6 +418,10 @@
 				D98C336E1BA073F200E16A3D /* MLTop10ViewController.m */,
 				D9F1E8DA1BA6B745002D89DF /* MLTopicDetailViewController.h */,
 				D9F1E8DB1BA6B745002D89DF /* MLTopicDetailViewController.m */,
+				D969677D1C4F82D600860350 /* MLTopicWebDetailViewController.h */,
+				D969677E1C4F82D600860350 /* MLTopicWebDetailViewController.m */,
+				D98C6F821C7760010056538A /* MLTopicPageViewController.h */,
+				D98C6F831C7760010056538A /* MLTopicPageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -403,10 +448,13 @@
 		D98C33591BA046A500E16A3D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D905A6F01C4F325C004D4ABC /* html */,
 				D990ADA61BAA924A00FA3A24 /* MLTop10Cell.h */,
 				D990ADA71BAA924A00FA3A24 /* MLTop10Cell.m */,
 				D9A5F5BD1BFB484000B3235B /* MLTopicDetailCell.h */,
 				D9A5F5BE1BFB484000B3235B /* MLTopicDetailCell.m */,
+				D905A6F61C4F5B64004D4ABC /* MLTopicDetailWebCell.h */,
+				D905A6F71C4F5B64004D4ABC /* MLTopicDetailWebCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,8 +552,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D98C332D1BA0429500E16A3D /* LaunchScreen.xib in Resources */,
+				D91E05D41C7856C500403C96 /* back2.png in Resources */,
 				D98C332A1BA0429500E16A3D /* Images.xcassets in Resources */,
+				D96967811C4F8AD600860350 /* jquery.min.js in Resources */,
+				D91E05D21C783C3200403C96 /* SXDetails.css in Resources */,
 				D9F1E8E21BA70686002D89DF /* topicDetail.html in Resources */,
+				D905A6F51C4F32E3004D4ABC /* content_template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,13 +624,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9A5F5C51BFB502400B3235B /* MLHotTopicFrame.m in Sources */,
+				D969677F1C4F82D600860350 /* MLTopicWebDetailViewController.m in Sources */,
 				D93FDA181BA113CE00A175FF /* MLTabBarButton.m in Sources */,
 				D98C33661BA0736000E16A3D /* MLMessageViewController.m in Sources */,
 				D9A5F5C21BFB4EAD00B3235B /* MLHotTopicCell.m in Sources */,
 				D98C336C1BA073D600E16A3D /* MLHotTopicsViewController.m in Sources */,
 				D9A5F5B91BFB3AAE00B3235B /* MLPostFrame.m in Sources */,
+				D905A6F81C4F5B64004D4ABC /* MLTopicDetailWebCell.m in Sources */,
 				D93CD80C1BA8F633002786FE /* MLNetTool.m in Sources */,
 				D990ADA81BAA924A00FA3A24 /* MLTop10Cell.m in Sources */,
+				D95F64C91C79BF220027902E /* NSData+MLDataCorrection.m in Sources */,
 				D93CD80F1BA90058002786FE /* MLHppleParser.m in Sources */,
 				D9A5F5BF1BFB484000B3235B /* MLTopicDetailCell.m in Sources */,
 				D98C33731BA07FF600E16A3D /* MLTabBar.m in Sources */,
@@ -587,6 +642,7 @@
 				D98C331F1BA0429500E16A3D /* main.m in Sources */,
 				D98C335A1BA046A500E16A3D /* AppDelegate.m in Sources */,
 				D98C335D1BA0724900E16A3D /* MLTabBarViewController.m in Sources */,
+				D98C6F841C7760010056538A /* MLTopicPageViewController.m in Sources */,
 				D9F1E8DC1BA6B745002D89DF /* MLTopicDetailViewController.m in Sources */,
 				D98C33691BA073AF00E16A3D /* MLBoardsViewController.m in Sources */,
 				D9A5F5BC1BFB438100B3235B /* MLPostDetailFrame.m in Sources */,
