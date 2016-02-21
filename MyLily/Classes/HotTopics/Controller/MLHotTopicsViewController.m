@@ -7,7 +7,7 @@
 //
 
 #import "MLHotTopicsViewController.h"
-#import "MLTopicDetailViewController.h"
+#import "MLTopicPageViewController.h"
 
 #import "MLPost.h"
 
@@ -113,8 +113,10 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MLPost *post = [[_topAllSections objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    MLTopicDetailViewController *topicDetailVC = [[MLTopicDetailViewController alloc] init];
+    MLTopicPageViewController *topicDetailVC = [[MLTopicPageViewController alloc] init];
+    topicDetailVC.title = post.title;
     topicDetailVC.topicUrl = post.url;
+    topicDetailVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:topicDetailVC animated:YES];
 }

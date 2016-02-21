@@ -19,6 +19,7 @@
 #import "MLHppleParser.h"
 #import "MLPostFrame.h"
 #import "MJRefresh.h"
+#import "MLTopicPageViewController.h"
 
 @interface MLTop10ViewController ()
 
@@ -135,9 +136,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     MLPostFrame *postFrame = self.postFrames[indexPath.row];
     MLPost *post = postFrame.post;
-    MLTopicDetailViewController *topicDetailVC = [[MLTopicDetailViewController alloc] init];
+    MLTopicPageViewController *topicDetailVC = [[MLTopicPageViewController alloc] init];
     topicDetailVC.title = post.title;
     topicDetailVC.topicUrl = post.url;
+    topicDetailVC.hidesBottomBarWhenPushed = YES;
     
     [self.navigationController pushViewController:topicDetailVC animated:YES];
 }
