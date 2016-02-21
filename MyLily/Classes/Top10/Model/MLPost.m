@@ -44,12 +44,12 @@
     
     TFHppleElement *secondTrNode = [trNodes objectAtIndex:1];
     TFHppleElement *textarea = [[[secondTrNode firstChild] childrenWithTagName:@"textarea"] objectAtIndex:0];
-    NSLog(@"[textarea text]:%@", [textarea text]);
+    self.textarea = [NSString stringWithFormat:@"%@", [textarea text]];
     
-    self.content = [[textarea text] stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
+    NSString *topicContent = [[textarea text] stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
+    NSMutableString *body = [[NSMutableString alloc] init];
     
-    
-    NSArray *splits = [self.content componentsSeparatedByString:@"<br>"];
+    NSArray *splits = [topicContent componentsSeparatedByString:@"<br>"];
     
     for (int i = 0; i < splits.count; i ++) {
         NSString *str = [splits objectAtIndex:i];
@@ -76,14 +76,14 @@
             NSUInteger titleLength = str.length - range.length;
             NSString *title = [str substringWithRange:NSMakeRange(titleLoc, titleLength)];
             self.title = title;
-        } else if (i == 2) { // 3.获取时间
+        } else if (i == 2) { // 2.获取时间
             NSRange range = [str rangeOfString:@"发信站: 南京大学小百合站 ("];
             NSUInteger postTimeLoc = range.location + range.length;
             NSUInteger postTimeLength = str.length - range.length - 1;
             NSString *postTime = [str substringWithRange:NSMakeRange(postTimeLoc, postTimeLength)];
             self.postTime = postTime;
         } else {
-            if ([str containsString:@"※"]) { // 4.获取ip
+            if ([str containsString:@"※"]) { // 3.获取ip
                 NSRange range = [str rangeOfString:@"[FROM: "];
                 if (range.location == NSNotFound) {
                     continue;
@@ -100,39 +100,60 @@
                     continue;
                 }
                 
-                MLPostContentSegment *contentSegment = [MLPostContentSegment new];
+                // 检测到图片链接
                 if ([self isImageSegment:str]) {
-                    contentSegment.isImage = YES;
-                        
-                } else {
-                    contentSegment.isImage = NO;
+                    NSMutableString *imgHtml = [NSMutableString string];
                     
-                    // 当前segment是文字，继续遍历后面的文字，直到下一个是图片或者结束
-                    int j = i + 1;
-                    for (; j < splits.count; j ++) {
-                        NSString *nextStr = [[splits objectAtIndex:j] stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-                        if ([self isImageSegment:nextStr]) {
-                            break;
+                    // 设置img的div
+                    [imgHtml appendString:@"<div class=\"img-parent\">"];
+                    CGFloat width = ScreenWidth - 40;
+                    // 不设置height，图片高度会自适应
+//                    CGFloat height = width * 0.75;
+                    
+                    NSString *onload = @"this.onclick = function() {"
+                                        " window.location.href = 'sx:src=' + this.src;"
+                                        "};";
+                    [imgHtml appendFormat:@"<img style=\"border-right: #999999 4px outset; border-bottom: #999999 4px outset; border-left: #000000 4px outset; border-top: #000000 4px outset;\" onload=\"%@\" width=\"%f\" src=\"%@\">", onload, width, str];
+                    // 结束标记
+                    [imgHtml appendString:@"</div>"];
+                    
+                    [body appendString:imgHtml];
+                    
+                } else {
+                    if ([str isEqualToString:@"-"]) {
+                        [body appendString:@"-<br>"];
+                    } else if ([str isEqualToString:@"--"]) {
+                        continue;
+                    } else {
+                        // 帖子文本内容
+                        NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+                        NSMutableString *topicText = [NSMutableString string];
+                        NSUInteger la = [str lengthOfBytesUsingEncoding:gbkEncoding];
+                        if (la < 71 || la > 89) {
+                            [topicText appendString:[NSString stringWithFormat:@"%@<br>", str]];
                         } else {
-                            str = [[str stringByAppendingString:nextStr] stringByAppendingString:@"\n"];
+                            [topicText appendString:str];
                         }
-                    }
-                    i = j - 1;
                         
+                        [body appendString:topicText];
+                    }
                 }
                 
-                contentSegment.content = str;
-                [self.contentSegments addObject:contentSegment];
             }
         }
     }
     
-//    NSLog(@"self.contentSegments:%@", self.contentSegments);
-//    NSLog(@"level:%d, splits:%@", self.level, splits);
+    self.content = body;
+}
+
+- (NSString *)postTime {
+    NSDateFormatter *sdf = [[NSDateFormatter alloc] init];
+    sdf.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    sdf.dateFormat = @"EEE MMM d HH:mm:ss yyyy";
+    NSDate *date = [sdf dateFromString:_postTime];
     
-    
-    //    NSLog(@"self.content:%@", [self.content stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"]);
-    //    NSLog(@"second tr node:%@", [[trNodes objectAtIndex:1] content]);
+    sdf.dateFormat = @"yyyy年M月d日 HH:mm:ss";
+    return [sdf stringFromDate:date];
 }
 
 - (BOOL)isImageSegment:(NSString *)str {
@@ -141,10 +162,6 @@
             || [str.lowercaseString hasSuffix:@".png"]
             || [str.lowercaseString hasSuffix:@".jpeg"]
             || [str.lowercaseString hasSuffix:@".gif"]);
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"title:%@, url:%@, board:%@, boardUrl:%@, author:%@, replyCount:%d, ranking:%d", self.title, self.url, self.board, self.boardUrl, self.author, self.replyCount];
 }
 
 @end

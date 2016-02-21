@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "MLAuthor.h"
 #import "TFHppleElement.h"
 
@@ -25,8 +26,10 @@
 @property (nonatomic, strong) NSString *content; // 帖子内容
 @property (nonatomic, strong) NSMutableArray *contentSegments; // 解析后的帖子片段
 @property (nonatomic, strong) NSString *ip; //发帖的ip
+@property (nonatomic, strong) NSString *textarea;
+
+@property (nonatomic, assign) CGFloat cellHeight;
 
 - (id)initWithTFHppleElement:(TFHppleElement *)element;
 
-- (NSString *)description;
 @end
