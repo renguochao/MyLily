@@ -8,6 +8,7 @@
 
 #import "MLNetTool.h"
 #import "Common.h"
+#import "NSData+MLDataCorrection.h"
 
 @implementation MLNetTool
 
@@ -17,8 +18,7 @@
     NSData *htmlData = [NSData dataWithContentsOfURL:absoluteUrl];
     
     // 2. 转码成utf8Data:先转成gb2312, 替换meta, 然后转成utf8
-    NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSString *postHtmlStr = [[NSString alloc] initWithData:htmlData encoding:gbkEncoding];
+    NSString *postHtmlStr = [htmlData GB18030String];
     
     NSString *uft8HtmlStr = [postHtmlStr stringByReplacingOccurrencesOfString:@"<meta HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=gb2312\">" withString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">"];
     NSData *utf8HtmlData = [uft8HtmlStr dataUsingEncoding:NSUTF8StringEncoding];
